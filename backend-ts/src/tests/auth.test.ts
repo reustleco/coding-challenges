@@ -36,7 +36,7 @@ describe('Auth', () => {
         .post('/signup')
         .send({username: "username", email: "user@email.com", password: "123"})
         .end((err, res) => {
-          res.should.have.status(200);
+          res.should.have.status(409);
           res.body.should.be.a('Object');
           res.body.message.should.be.equal('User is already exist');
           done();
@@ -47,7 +47,7 @@ describe('Auth', () => {
         .post('/signup')
         .send({username: "user", email: "another@email.com", password: "123"})
         .end((err, res) => {
-          res.should.have.status(200);
+          res.should.have.status(409);
           res.body.should.be.a('Object');
           res.body.message.should.be.equal('User is already exist');
           done();
@@ -74,7 +74,7 @@ describe('Auth', () => {
         .post('/login')
         .send({username: "user", password: "1234"})
         .end((err, res) => {
-          res.should.have.status(200);
+          res.should.have.status(401);
           res.body.should.be.a('Object');
           res.body.message.should.be.equal('Wrong credentials!');
           done();

@@ -36,7 +36,7 @@ describe('CRUD', () => {
         .post('/contacts')
         .send({identify: "first-contact", name: "John"})
         .end((err, res) => {
-          res.should.have.status(422);
+          res.should.have.status(409);
           res.body.should.be.a('Object');
           res.body.message.should.be.equal('Contact is already created');
           res.body.identify.should.be.equal('first-contact');
