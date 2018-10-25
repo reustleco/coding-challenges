@@ -1,4 +1,4 @@
-# Reustle.co Coding Challenges
+### Reustle.co Coding Challenges
 
 Good luck!
 
