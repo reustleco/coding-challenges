@@ -32,10 +32,14 @@ Object.keys(db).forEach(modelName => {
     }
 });
 
-function initDB() {
+function initDB(cb) {
     sequelize
         .sync({force: true})
         .then(function (err) {
+            // for backward compatibility after making method async
+            if (cb) {
+                cb();
+            }
             console.log('Database reset!');
         }, function (err) {
             console.log('An error occurred while creating the table:', err);

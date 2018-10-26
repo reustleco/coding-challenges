@@ -13,9 +13,12 @@ var db = require('../models/index');
 
 use(chaiHttp);
 
-// Initialize test db before tests
-db.initDB();
+
 describe('CRUD', () => {
+  // Initialize test db before tests
+  before((done) => {
+      db.initDB(done);
+  });
 
   describe('Create Contact', () => {
     it(`It's should create contact and return his name`, (done) => {

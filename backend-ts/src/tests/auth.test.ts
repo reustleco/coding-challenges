@@ -13,10 +13,12 @@ let server = require('../server');
 let authenticatedUser = request(server);
 var db = require('../models/index');
 
-// Initialize test db before tests
-db.initDB();
 
 describe('Auth', () => {
+  // Initialize test db before tests
+  before((done) => {
+    db.initDB(done);
+  });
   describe('Sign up', () => {
     it(`should create user`, (done) => {
       request(server)
