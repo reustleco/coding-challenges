@@ -1,15 +1,14 @@
 process.env.NODE_ENV = 'test';
 
-let app = require('../app');
 import { use } from 'chai';
 import { request } from 'chai';
 
 //Require the dev-dependencies
-let chai = require('chai');
-let chaiHttp = require('chai-http');
-let server = require('../server');
-let should = chai.should();
-var db = require('../models/index');
+const chai = require('chai');
+const should = chai.should();
+const chaiHttp = require('chai-http');
+const server = require('../server');
+const db = require('../models/index');
 
 use(chaiHttp);
 
@@ -21,7 +20,7 @@ describe('CRUD', () => {
   });
 
   describe('Create Contact', () => {
-    it(`It's should create contact and return his name`, (done) => {
+    it(`It should create contact and return his name`, (done) => {
       request(server)
         .post('/contacts')
         .send({identify: "first-contact", name: "John"})
@@ -92,7 +91,7 @@ describe('CRUD', () => {
         .end((err, res) => {
           res.should.have.status(404);
           res.body.should.be.a('Object');
-          res.body.message.should.be.equal('Contact is not found');
+          res.body.message.should.be.equal('Contact is not found!');
           done();
         });
     });

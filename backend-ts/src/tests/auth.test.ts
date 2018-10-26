@@ -1,17 +1,17 @@
 process.env.NODE_ENV = 'test';
 
-let app = require('../app');
 import { use } from 'chai';
 import { request } from 'chai';
 
 //Require the dev-dependencies
-let chai = require('chai');
-let chaiHttp = require('chai-http');
+const chaiHttp = require('chai-http');
+const chai = require('chai');
+const should = chai.should();
 
 use(chaiHttp);
-let server = require('../server');
-let authenticatedUser = request(server);
-var db = require('../models/index');
+const server = require('../server');
+const authenticatedUser = request.agent(server);
+const db = require('../models/index');
 
 
 describe('Auth', () => {
@@ -40,18 +40,18 @@ describe('Auth', () => {
         .end((err, res) => {
           res.should.have.status(409);
           res.body.should.be.a('Object');
-          res.body.message.should.be.equal('User is already exist');
+          res.body.message.should.be.equal('User already exists');
           done();
         });
     });
-    it(`user already exist (username)`, (done) => {
+    it(`user already exists (username)`, (done) => {
       request(server)
         .post('/signup')
         .send({username: "user", email: "another@email.com", password: "123"})
         .end((err, res) => {
           res.should.have.status(409);
           res.body.should.be.a('Object');
-          res.body.message.should.be.equal('User is already exist');
+          res.body.message.should.be.equal('User already exists');
           done();
         });
     });
