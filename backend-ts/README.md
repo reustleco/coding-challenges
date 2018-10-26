@@ -24,7 +24,7 @@ Please don't post problems and solutions publicly (on github or similar).
 
 If there's something we should clarify or help with, please don't hesitate to ask.
 
-If you want to motivate any particular choice, do so with inline comments.
+Please use inline comments wherever you see fit to explain why you made certain coding decisions.
 
 The codebase is a Git repo, so please commit your changes locally before delivering the coding challenge as a compressed archive.
 
