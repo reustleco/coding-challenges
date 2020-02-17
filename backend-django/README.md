@@ -7,7 +7,7 @@ You can use any available API, we recommend https://www.coingecko.com/api/docume
 Using Django, create an app that:
 
 - Allows user creation
-- Allows users authentication
+- Allows user authentication
 - An authenticated user can:
   - See a list of available crypto coins
   - From that list, the user can select 1 or more coins to "watch"
