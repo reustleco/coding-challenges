@@ -6,7 +6,7 @@ You can use any available API, we recommend https://www.coingecko.com/api/docume
 
 Using Django, create an app that:
 
-- Allows users creation
+- Allows user creation
 - Allows users authentication
 - An authenticated user can:
   - See a list of available crypto coins
