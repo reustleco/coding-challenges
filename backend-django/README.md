@@ -12,7 +12,7 @@ Using Django, create an app that:
   - See a list of available crypto coins
   - From that list, the user can select 1 or more coins to "watch"
   - For each watched coin, the coin value against 'USD' is stored in DB every `n` minutes, where `n` is user configurable
-- Write 2 unit and 2 integration tests
+- Write 2 unit tests and 2 integration tests
 
 ## Tips
 You don't need to configure a frontend, you can use the Django admin site.
