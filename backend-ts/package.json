@@ -8,7 +8,7 @@
     "dev": "ts-node ./src/server.ts",
     "start": "nodemon ./dist/server.js",
     "prod": "npm run build && npm run start",
-    "test": "mocha -r ts-node/register src/tests/auth.test.ts src/tests/crud.test.ts"
+    "test": "mocha -r ts-node/register src/tests/auth.test.ts src/tests/crud.test.ts --exit"
   },
   "author": "",
   "license": "ISC",
